@@ -1,0 +1,32 @@
+[
+  {
+    "name": "admin",
+    "path": "/admin",
+    "component": "D:\\\\STUDY\\\\VUE-NODEBIRD\\\\vueNodeBrid\\\\CH1\\\\FRONT\\\\pages\\\\admin.vue",
+    "chunkName": "pages/admin"
+  },
+  {
+    "name": "profile",
+    "path": "/profile",
+    "component": "D:\\\\STUDY\\\\VUE-NODEBIRD\\\\vueNodeBrid\\\\CH1\\\\FRONT\\\\pages\\\\profile.vue",
+    "chunkName": "pages/profile"
+  },
+  {
+    "name": "signup",
+    "path": "/signup",
+    "component": "D:\\\\STUDY\\\\VUE-NODEBIRD\\\\vueNodeBrid\\\\CH1\\\\FRONT\\\\pages\\\\signup.vue",
+    "chunkName": "pages/signup"
+  },
+  {
+    "name": "user-test",
+    "path": "/user/test",
+    "component": "D:\\\\STUDY\\\\VUE-NODEBIRD\\\\vueNodeBrid\\\\CH1\\\\FRONT\\\\pages\\\\user\\\\test.vue",
+    "chunkName": "pages/user/test"
+  },
+  {
+    "name": "index",
+    "path": "/",
+    "component": "D:\\\\STUDY\\\\VUE-NODEBIRD\\\\vueNodeBrid\\\\CH1\\\\FRONT\\\\pages\\\\index.vue",
+    "chunkName": "pages/index"
+  }
+]
