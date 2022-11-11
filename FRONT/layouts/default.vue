@@ -8,7 +8,7 @@
           </nuxt-link>
         </v-toolbar-title>
         <v-spacer />
-        <v-toolbar-item class="d-flex align-center">
+        <v-toolbar-items class="d-flex align-center">
           <v-text-field prepend-icon="mdi-magnify" label="검색" hide-details />
           <v-btn text nuxt to="/profile">
             <div>프로필</div>
@@ -16,7 +16,7 @@
           <v-btn text nuxt to="/signup">
             <div>회원가입</div>
           </v-btn>
-        </v-toolbar-item>
+        </v-toolbar-items>
       </v-toolbar>
     </div>
 
@@ -41,6 +41,16 @@ export default {
   head(){
     return {
       title: '노드버드'
+    }
+  },
+  computed: {
+    name(){
+      return this.$store.state.posts.name;
+    }
+  },
+  methods: {
+    onChangeName(){
+      this.$store.commit('posts/bye')
     }
   }
 }

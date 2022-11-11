@@ -4,10 +4,12 @@
       <v-card class="mb-5">
         <v-container>
           <v-subheader>내 프로필</v-subheader>
-          <v-form>
+          <v-form v-model="valid" @submit.prevent="onChangeNickname">
             <v-text-field
-              label="닉네임"
-              required          
+              v-model="nickname"
+              label="닉네임"          
+              required
+              :rules="nicknameRules"
             />
             <v-btn type="submit" color="blue">
               수정
@@ -40,13 +42,20 @@ export default {
   },
   data() {
     return {
-      name: 'myPage'
+      name: 'myPage',
+      valid: false,
+      nickname: '',
+      nicknameRules: [
+        v => !!v || '닉네임을 입력하세요.'
+      ]
     }
   },
-  head(){
-    return {
-      title: '프로필'
-    }
+  methods: {
+    onChangeNickname(){
+      this.$store.dispatch('users/changeNickname',{
+        nickname : this.nickname
+      })
+    } 
   }
 }
 </script>

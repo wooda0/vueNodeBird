@@ -12,6 +12,7 @@
   ],
   "plugins": [],
   "rules": {
+    "vue/mushtache-interpolation-spacing": "off",
     "vue/max-attributes-per-line": "off",
     "vue/singleline-element-content-newline": "off"
   }
