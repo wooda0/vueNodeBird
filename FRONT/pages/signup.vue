@@ -52,6 +52,7 @@
 <script>
 export default {
   name:"SignupPage",
+  middleware: 'annonymous',
   data() {
     return {
       valid: false,
@@ -74,6 +75,20 @@ export default {
         v => !!v || '비밀번호 확인은 필수입니다.',
         v => v === this.password || '비밀번호가 일치하지 않습니다'
       ]
+    }
+  },
+  computed: {
+    me() {
+      return this.$store.state.users.me;
+    }
+  },
+  watch: {
+    me(oldValue, value){
+      if(value){
+        this.$router.push({
+          path: '/'
+        })
+      }
     }
   },
   methods:{

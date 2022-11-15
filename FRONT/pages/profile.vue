@@ -20,13 +20,13 @@
       <v-card class="mb-5">
         <v-container>
           <v-subheader>팔로잉</v-subheader>
-          <FollowList />
+          <FollowList :users="followingList" :remove="removeFollowing" />
         </v-container>
       </v-card>
       <v-card class="mb-5">
         <v-container>
           <v-subheader>팔로워</v-subheader>
-          <FollowList />
+          <FollowList :users="followerList" :remove="removeFollower" />
         </v-container>
       </v-card>
     </v-container>
@@ -40,6 +40,7 @@ export default {
   components:{
     FollowList
   },
+  middleware: 'authenticated',
   data() {
     return {
       name: 'myPage',
@@ -50,12 +51,26 @@ export default {
       ]
     }
   },
+  computed:{
+    followerList(){
+      return this.$store.state.users.followerList
+    },
+    followingList(){
+      return this.$store.state.users.followingList
+    }
+  },
   methods: {
     onChangeNickname(){
       this.$store.dispatch('users/changeNickname',{
         nickname : this.nickname
       })
-    } 
+    },
+    removeFollowing(id) {
+      this.$store.dispatch('users/removeFollowing', { id })
+    },
+    removeFollower(id) {
+      this.$store.dispatch('users/removeFollower', { id })
+    }
   }
 }
 </script>
